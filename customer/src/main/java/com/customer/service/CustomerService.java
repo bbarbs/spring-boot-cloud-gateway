@@ -1,0 +1,57 @@
+package com.customer.service;
+
+import com.customer.model.Customer;
+import io.reactivex.Maybe;
+
+import java.util.List;
+
+public interface CustomerService {
+
+    /**
+     * Get list of customers.
+     *
+     * @return
+     */
+    Maybe<List<Customer>> getAllCustomer();
+
+    /**
+     * Get customer by id.
+     *
+     * @param customerId
+     * @return
+     */
+    Maybe<Customer> getCustomerById(Long customerId);
+
+    /**
+     * Add customer.
+     *
+     * @param customer
+     * @return
+     */
+    Maybe<Customer> addCustomer(Customer customer);
+
+    /**
+     * Update customer by id.
+     *
+     * @param customerId
+     * @param customer
+     * @return
+     */
+    Maybe<Customer> updateCustomerById(Long customerId, Customer customer);
+
+    /**
+     * Delete customer by id.
+     *
+     * @param customerId
+     * @return
+     */
+    Maybe<Void> deleteCustomerById(Long customerId);
+
+    /**
+     * Get customers by age.
+     *
+     * @param age
+     * @return
+     */
+    Maybe<List<Customer>> getCustomersByAge(int age);
+}
